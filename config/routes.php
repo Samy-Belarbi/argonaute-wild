@@ -20,10 +20,5 @@ return [
     '/deleteargonaut' => [
         'App\Controllers\DeleteArgonautController',
         'delete'
-    ],
-
-    '/krorys' => [
-        'App\Controllers\KrorysController',
-        'lol'
     ]
 ];
