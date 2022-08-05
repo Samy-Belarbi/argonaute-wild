@@ -6,3 +6,10 @@ return [
     'user' => 'epiz_32321072',
     'password' => 'AuBRYbVYTKvAelA'
 ];
+
+// return [
+//     'host' => '127.0.0.1',
+//     'dbname' => 'Wild',
+//     'user' => 'root',
+//     'password' => ''
+// ];
