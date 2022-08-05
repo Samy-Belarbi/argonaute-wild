@@ -156,7 +156,7 @@ const refreshArgonautList = async () => {
 }
 
 const getArgonauts = async () => {
-    return fetch('/getArgonauts')
+    return fetch('getArgonauts')
     .then(response => response.json())
     .catch(error => console.error(error));
 }
