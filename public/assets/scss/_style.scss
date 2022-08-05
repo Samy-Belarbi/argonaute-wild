@@ -1,0 +1,221 @@
+@use "header.scss";
+@use "footer.scss";
+
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+// RESETER
+* {
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+}
+
+main {
+  width: 100%;
+}
+
+h1 {
+  text-align: center;
+}
+
+h2 {
+  font-size: 35px;
+  color: #f76c6c;
+}
+
+.shake {
+  animation: shaking 0.35s;
+
+  @keyframes shaking {
+      0% { transform: translateX(0) }
+      25% { transform: translateX(5px) }
+      50% { transform: translateX(-5px) }
+      75% { transform: translateX(5px) }
+      100% { transform: translateX(0) }
+     }
+}
+
+.error {
+  color: red;
+  font-size: 16px;
+  text-align: center;
+}
+
+// MAIN
+#container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 50px;
+  width: 100%;
+  padding: 2em 2em;
+  flex-wrap: wrap;
+
+  // PACK
+  .pack {
+    padding-top: 2em;
+    min-width: 40%;
+    max-width: 500px;
+    height: 350px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    box-shadow: 0px 0px 5px #0000001a;
+
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+      box-shadow: 0px 0px 5px #00000049;
+    }
+
+    .list {
+      height: 80%;
+    }
+  }
+
+  // FORM ADD MEMBER
+  .add-member {
+    form {
+      padding-top: 3em;
+      height: 80%;
+      width: 80%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1em;
+
+      label {
+        opacity: 0.3;
+        color: black;
+      }
+
+      input,
+      select {
+        width: 50%;
+        padding: 0.2em 0.3em;
+        font-size: 20px;
+        border: none;
+        box-shadow: 0px 2px 0px 0px #f76c6c;
+        outline: none;
+
+        &:focus {
+          box-shadow: 0px 0px 0px 2px #f76c6c;
+        }
+      }
+
+      input {
+        width: 50%;
+        &::placeholder {
+          color: black;
+          opacity: 0.5;
+        }
+      }
+
+      select {
+        width: 53%;
+        cursor: pointer;
+        ///////////////////////////// A CORRIGER
+        option {
+          color: red;
+        }
+      }
+
+      button {
+        margin-top: 1em;
+        font-size: 20px;
+        width: 40%;
+        border: none;
+        background-color: #f76c6c;
+        color: white;
+        padding: 0.2em 1em;
+
+        cursor: pointer;
+
+        transition: all 0.3s ease-in-out;
+
+        &:hover {
+          transform: scale(1.05);
+        }
+      }
+    }
+  }
+
+  // MEMBER LIST
+  .members-list {
+    overflow: scroll;
+
+    .list {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 1em 0;
+      gap: 1em;
+
+      li {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+
+        .member {
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+          align-items: center;
+          position: relative;
+          gap: 1em;
+          width: 70%;
+
+          .argonaute,
+          .adjective {
+            width: 30%;
+            display: flex;
+            justify-content: center;
+            font-size: 20px;
+            padding: 0.2em 0.5em;
+          }
+
+          // TOUS LES ADJECTIFS
+          .adjective {
+            color: white;
+          }
+
+          .chanceux {
+            background-color: greenyellow;
+          }
+
+          .maladroit {
+            background-color: red;
+          }
+
+          .beau {
+            background-color: blue;
+          }
+
+          .sensible {
+            background-color: palevioletred;
+          }
+
+          .fort {
+            background-color: black;
+          }
+
+          .sage {
+            background-color: purple;
+          }
+
+          .delete-btn {
+            width: fit-content;
+            padding: 0;
+            color: black;
+            cursor: pointer;
+            opacity: 0.3;
+            height: fit-content;
+            font-size: 16px;
+            border: none;
+          }
+        }
+      }
+    }
+  }
+}
