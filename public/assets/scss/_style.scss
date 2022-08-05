@@ -7,6 +7,7 @@
 * {
   margin: 0;
   font-family: "Roboto", sans-serif;
+  box-sizing: border-box;
 }
 
 main {
@@ -18,7 +19,7 @@ h1 {
 }
 
 h2 {
-  font-size: 35px;
+  font-size: 25px;
   color: #f76c6c;
 }
 
@@ -47,22 +48,23 @@ h2 {
   justify-content: center;
   gap: 50px;
   width: 100%;
-  padding: 2em 2em;
   flex-wrap: wrap;
-
+  padding: 2em 2em;
   // PACK
   .pack {
     padding-top: 2em;
-    min-width: 40%;
-    max-width: 500px;
+    min-width: 300px;
+    flex: 1 0;
     height: 350px;
     display: flex;
     flex-direction: column;
+    padding: 2em 0em;
     align-items: center;
 
     box-shadow: 0px 0px 5px #0000001a;
 
     transition: all 0.3s ease-in-out;
+
 
     &:hover {
       box-shadow: 0px 0px 5px #00000049;
@@ -92,6 +94,7 @@ h2 {
       input,
       select {
         width: 50%;
+        min-width: 200px;
         padding: 0.2em 0.3em;
         font-size: 20px;
         border: none;
