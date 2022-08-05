@@ -1,10 +1,10 @@
 <?php
 
 return [
-    'host' => 'sql104.epizy.com',
-    'dbname' => 'epiz_32321072_argonautes',
-    'user' => 'epiz_32321072',
-    'password' => 'AuBRYbVYTKvAelA'
+    'host' => 'sql11.freemysqlhosting.net',
+    'dbname' => 'sql11511000',
+    'user' => 'sql11511000',
+    'password' => 'z13VGDa6hH'
 ];
 
 // return [
