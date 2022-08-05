@@ -90,7 +90,7 @@ const insertInDb = async (array) => {
     const formData = new FormData();
     formData.append("Argonaute", JSON.stringify(argonaut));
 
-    fetch('addArgonaut', {
+    fetch('addArgonaut.php', {
         method: "post",
         body: formData
     })
@@ -156,7 +156,7 @@ const refreshArgonautList = async () => {
 }
 
 const getArgonauts = async () => {
-    return fetch('getArgonauts')
+    return fetch('getArgonauts.php')
     .then(response => response.json())
     .catch(error => console.error(error));
 }
@@ -176,7 +176,7 @@ const removeFromDb = (id) => {
     const formData = new FormData();
     formData.append("ID", id);
 
-    fetch('deleteArgonaut', {
+    fetch('deleteArgonaut.php', {
         method: "post",
         body: formData
     })
