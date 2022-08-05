@@ -13,10 +13,6 @@ try {
     
     $route = $_SERVER['PATH_INFO'] ?? '/';
     $routes = require 'config/routes.php';
-
-    var_dump($route);
-    var_dump($routes);
-    exit;
     
     if (isset($routes[$route])) {
         list($controllerName, $method) = $routes[$route];
