@@ -12,6 +12,9 @@ try {
     });
     
     $route = $_SERVER['PATH_INFO'] ?? '/';
+
+    var_dump($route);
+    var_dump($_SERVER);
     
     $routes = require 'config/routes.php';
     
