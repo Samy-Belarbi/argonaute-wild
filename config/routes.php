@@ -7,17 +7,17 @@ return [
         'show'
     ],
 
-    '/addArgonaut' => [
+    '/addargonaut' => [
         'App\Controllers\AddArgonautController',
         'add'
     ],
 
-    '/getArgonauts' => [
+    '/getargonauts' => [
         'App\Controllers\GetArgonautsController',
         'get'
     ],
 
-    '/deleteArgonaut' => [
+    '/deleteargonaut' => [
         'App\Controllers\DeleteArgonautController',
         'delete'
     ],
