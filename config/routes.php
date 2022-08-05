@@ -25,5 +25,5 @@ return [
     '/krorys' => [
         'App\Controllers\KrorysController',
         'lol'
-    ],
+    ]
 ];
