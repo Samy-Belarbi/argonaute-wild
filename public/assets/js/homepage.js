@@ -36,7 +36,7 @@ const checkForm = async (e) => {
 
 // CHECKERS
 const checkInput = (value) => {
-    if (/^[A-Za-z0-9]*$/.test(value) && value.length < 10 && value.length > 0) {
+    if (/^[A-Za-z0-9]*$/.test(value) && value.length < 15 && value.length > 0) {
         return true;
     } else {
         displayInputError();
@@ -48,7 +48,7 @@ const displayInputError = () => {
     const inputParent = input.parentNode;
     input.classList.add("shake");
     setTimeout(() => input.classList.remove("shake"), 1000);
-    const p = returnPError("Veuillez insérer un nom inférieur à 10 caractères, sans caractères spéciaux ou accents.");
+    const p = returnPError("Veuillez insérer un nom inférieur à 15 caractères, sans caractères spéciaux ou accents.");
     inputParent.insertBefore(p, input.nextElementSibling);
 }
 
