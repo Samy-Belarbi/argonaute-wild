@@ -6,12 +6,15 @@
 
         <form class="new-member-form">
 
-            <label for="argonaute-name">Nom de l'Argonaute</label>
-            <input type="text" name="argonaute-name" id="argonaute-name" placeholder="Charalampos">
+            <div class="input-container">
+                <label for="argonaute-name">Nom de l'Argonaute</label>
+                <input type="text" name="argonaute-name" id="argonaute-name" placeholder="Charalampos">
+            </div>
 
-            <select name="adjective" id="adjective-list">
-                <option value="" disabled selected>Choisissez un adjectif</option>
-            </select>
+            <div class="input-container">
+                <label for="adjective">Choisissez un adjectif</label>
+                <select name="adjective" id="adjective-list" size="6"></select>
+            </div>
 
             <button type="submit">Ajouter</button>
 

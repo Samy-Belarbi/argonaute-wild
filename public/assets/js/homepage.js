@@ -8,7 +8,6 @@ const main = async () => {
     insertAdjectives();
     await refreshArgonautList();
     form.addEventListener("submit", (event) => checkForm(event));
-    // select.addEventListener("click", displayOptions());
 }
 
 // Fonction qui ajoute tous les adjectifs en fonction du tableau au dessus
@@ -46,10 +45,11 @@ const checkInput = (value) => {
 
 const displayInputError = () => {
     const input = document.getElementById("argonaute-name");
+    const inputParent = input.parentNode;
     input.classList.add("shake");
     setTimeout(() => input.classList.remove("shake"), 1000);
     const p = returnPError("Veuillez insérer un nom inférieur à 10 caractères, sans caractères spéciaux ou accents.");
-    form.insertBefore(p, input.nextElementSibling);
+    inputParent.insertBefore(p, input.nextElementSibling);
 }
 
 const deleteAllErrors = () => {
@@ -69,9 +69,10 @@ const checkSelect = (value) => {
 
 const displaySelectError = () => {
     select.classList.add("shake");
+    const selectParent = select.parentNode;
     setTimeout(() => select.classList.remove("shake"), 1000);
     const p = returnPError("Veuillez sélectionner un adjectif.");
-    form.insertBefore(p, select.nextElementSibling);
+    selectParent.insertBefore(p, select.nextElementSibling);
 }
 
 const returnPError = (message) => {
