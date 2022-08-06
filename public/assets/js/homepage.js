@@ -26,6 +26,7 @@ const checkForm = async (e) => {
     e.preventDefault();
     const input = document.getElementById("argonaute-name");
     deleteAllErrors();
+    checkSelect(select.value);
 
     if (checkInput(input.value) && checkSelect(select.value)) {
 
