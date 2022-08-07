@@ -3,6 +3,16 @@
 
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 
+:root {
+  --wildRed: #f76c6c;
+}
+
+// GLOBAL MIXINS //
+
+@mixin classicTransi {
+  transition: all 0.3s ease-in-out;
+}
+
 // RESETER
 * {
   margin: 0;
@@ -10,7 +20,7 @@
   box-sizing: border-box;
 
   &::selection {
-    background-color: #f76c6c;
+    background-color: var(--wildRed);
     color: white;
   }
 }
@@ -25,7 +35,7 @@ h1 {
 
 h2 {
   font-size: 25px;
-  color: #f76c6c;
+  color: var(--wildRed);
 }
 
 .shake {
@@ -79,7 +89,7 @@ h2 {
 
     box-shadow: 0px 0px 5px #0000001a;
 
-    transition: all 0.3s ease-in-out;
+    @include classicTransi;
 
     &:hover {
       box-shadow: 0px 0px 5px #00000049;
@@ -121,15 +131,15 @@ h2 {
           font-size: 20px;
           background-color: white;
           border: none;
-          box-shadow: 0px 2px 0px 0px #f76c6c;
+          box-shadow: 0px 2px 0px 0px var(--wildRed);
           outline: none;
 
           &:focus {
-            box-shadow: 0px 0px 0px 2px #f76c6c;
+            box-shadow: 0px 0px 0px 2px var(--wildRed);
 
             option {
               &:checked {
-                background: #f76c6c linear-gradient(0deg, #f76c6c 0%, #f76c6c 100%);
+                background: var(--wildRed) linear-gradient(0deg, var(--wildRed) 0%, var(--wildRed) 100%);
                 color: #ffffff;
               }
             }
@@ -151,7 +161,7 @@ h2 {
             &:hover,
             &:checked {
               cursor: pointer;
-              background-color: #f76c6c;
+              background-color: var(--wildRed);
               color: white;
             }
           }
@@ -162,13 +172,13 @@ h2 {
         font-size: 20px;
         width: 40%;
         border: none;
-        background-color: #f76c6c;
+        background-color: var(--wildRed);
         color: white;
         padding: 0.2em 1em;
 
         cursor: pointer;
 
-        transition: all 0.3s ease-in-out;
+        @include classicTransi;
 
         &:hover {
           transform: scale(1.05);
@@ -233,7 +243,7 @@ h2 {
           }
 
           .beau {
-            background-color: #f76c6c;
+            background-color: var(--wildRed);
           }
 
           .sensible {

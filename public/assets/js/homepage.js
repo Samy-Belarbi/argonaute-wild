@@ -28,8 +28,9 @@ const checkForm = async (e) => {
     deleteAllErrors();
 
     if (checkInput(input.value) && checkSelect(select.value)) {
-
         const arrayValues = [input.value, select.value];
+        input.value = "";
+        select.selectedIndex = -1;
         await insertInDb(arrayValues);
     }
 }
