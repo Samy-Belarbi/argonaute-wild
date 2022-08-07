@@ -267,6 +267,13 @@ h2 {
             height: fit-content;
             font-size: 16px;
             border: none;
+            background-color: transparent;
+
+            @include classicTransi;
+
+            &:hover {
+              opacity: 1;
+            }
           }
         }
       }
