@@ -1,0 +1,282 @@
+@use "header.scss";
+@use "footer.scss";
+
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+:root {
+  --wildRed: #f76c6c;
+}
+
+// GLOBAL MIXINS //
+
+@mixin classicTransi {
+  transition: all 0.3s ease-in-out;
+}
+
+// RESETER
+* {
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+  box-sizing: border-box;
+
+  &::selection {
+    background-color: var(--wildRed);
+    color: white;
+  }
+}
+
+main {
+  width: 100%;
+}
+
+h1 {
+  text-align: center;
+}
+
+h2 {
+  font-size: 25px;
+  color: var(--wildRed);
+}
+
+.shake {
+  animation: shaking 0.35s;
+
+  @keyframes shaking {
+    0% {
+      transform: translateX(0);
+    }
+    25% {
+      transform: translateX(5px);
+    }
+    50% {
+      transform: translateX(-5px);
+    }
+    75% {
+      transform: translateX(5px);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+}
+
+.error {
+  color: red;
+  font-size: 16px;
+  text-align: center;
+}
+
+// MAIN
+#container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 4em;
+  width: 100%;
+  flex-wrap: wrap;
+  padding: 2em 2em;
+  // PACK
+  .pack {
+    min-width: 400px;
+    max-width: 500px;
+    flex: 1 0;
+    min-height: 350px;
+    max-height: 600px;
+    display: flex;
+    flex-direction: column;
+    padding: 2em 0em;
+    align-items: center;
+
+    box-shadow: 0px 0px 5px #0000001a;
+
+    @include classicTransi;
+
+    &:hover {
+      box-shadow: 0px 0px 5px #00000049;
+    }
+
+    .list {
+      height: 80%;
+    }
+  }
+
+  // FORM ADD MEMBER
+  .add-member {
+    form {
+      padding-top: 3em;
+      height: 80%;
+      width: 80%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 3em;
+
+      .input-container {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+        gap: 1em;
+        label {
+          opacity: 0.3;
+          color: black;
+        }
+
+        input,
+        select {
+          width: 70%;
+          min-width: 200px;
+          padding: 0.2em 0.3em;
+          font-size: 20px;
+          background-color: white;
+          border: none;
+          box-shadow: 0px 2px 0px 0px var(--wildRed);
+          outline: none;
+
+          &:focus {
+            box-shadow: 0px 0px 0px 2px var(--wildRed);
+
+            option {
+              &:checked {
+                background: var(--wildRed) linear-gradient(0deg, var(--wildRed) 0%, var(--wildRed) 100%);
+                color: #ffffff;
+              }
+            }
+          }
+        }
+
+        input {
+          &::placeholder {
+            color: black;
+            opacity: 0.5;
+          }
+        }
+
+        select {
+          border-radius: 0;
+
+          option {
+
+            &:hover,
+            &:checked {
+              cursor: pointer;
+              background-color: var(--wildRed);
+              color: white;
+            }
+          }
+        }
+      }
+
+      button {
+        font-size: 20px;
+        width: 40%;
+        border: none;
+        background-color: var(--wildRed);
+        color: white;
+        padding: 0.2em 1em;
+
+        cursor: pointer;
+
+        @include classicTransi;
+
+        &:hover {
+          transform: scale(1.05);
+        }
+      }
+    }
+  }
+
+  // MEMBER LIST
+  .members-list {
+    overflow: scroll;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    overflow-y: scroll; 
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    .list {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 1em 0;
+      gap: 1em;
+
+      li {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+
+        .member {
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+          align-items: center;
+          position: relative;
+          gap: 1em;
+          width: 70%;
+
+          .argonaute,
+          .adjective {
+            width: 35%;
+            display: flex;
+            justify-content: center;
+            font-size: 20px;
+            padding: 0.2em 0.5em;
+          }
+
+          // TOUS LES ADJECTIFS
+          .adjective {
+            color: white;
+          }
+
+          .chanceux {
+            background-color: rgb(28, 207, 0);
+          }
+
+          .maladroit {
+            background-color: rgb(103, 0, 0);
+          }
+
+          .beau {
+            background-color: var(--wildRed);
+          }
+
+          .sensible {
+            background-color: rgb(255, 0, 217);
+          }
+
+          .fort {
+            background-color: black;
+          }
+
+          .sage {
+            background-color: purple;
+          }
+
+          .delete-btn {
+            width: fit-content;
+            padding: 0;
+            color: black;
+            cursor: pointer;
+            opacity: 0.3;
+            height: fit-content;
+            font-size: 16px;
+            border: none;
+            background-color: transparent;
+
+            @include classicTransi;
+
+            &:hover {
+              opacity: 1;
+            }
+          }
+        }
+      }
+    }
+  }
+}
