@@ -10,7 +10,7 @@ class HomeController extends AbstractController
     {
 
         $this->display('homepage', [
-            'title' => 'Entretien Technique Wild Code School - Belarbi Samy',
+            'title' => 'Entretien Wild - Belarbi Samy',
             'script' => 'homepage'
         ]);
 
