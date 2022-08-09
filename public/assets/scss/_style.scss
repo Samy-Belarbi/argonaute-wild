@@ -156,6 +156,13 @@ h2 {
         select {
           border-radius: 0;
 
+          -ms-overflow-style: none;
+          scrollbar-width: none;
+
+          &::-webkit-scrollbar {
+            display: none;
+          }
+
           option {
 
             &:hover,
