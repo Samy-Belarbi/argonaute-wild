@@ -19,7 +19,7 @@ class ArgonautManager extends AbstractModel {
     
     public function findAllArgonauts(): ?Array
     {
-        $query = $this->db->getResults('SELECT * FROM Argonautes', [
+        $query = $this->db->getResults('SELECT * FROM Argonautes ORDER BY Firstname', [
         ]);
         
         if (empty($query)) {
